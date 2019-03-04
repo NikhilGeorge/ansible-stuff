@@ -9,3 +9,7 @@
     - name: create a failure text file
       copy: content="FAILURE", dest="/tmp/result.txt"
       when: input == "fail"
+
+    - name: create a Ok text file
+      copy: content="OK", dest="/tmp/ok.txt"
+      when: input != "fail"
