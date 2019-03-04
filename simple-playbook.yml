@@ -1,0 +1,11 @@
+---
+- name: Simple Playbook to output SUCCESS or FAILURE
+  hosts: localhost
+  tasks:
+    - name: create a success text file
+      copy: content="SUCCESS", dest="/tmp/result.txt"
+      when: input == "success"
+    
+    - name: create a failure text file
+      copy: content="FAILURE", dest="/tmp/result.txt"
+      when: input == "fail"
